@@ -106,6 +106,7 @@ public class RequestParamController {
             //Integer b = null;
         log.info("username={}, age={}", username, age);
         return "OK";
+
     }
     @ResponseBody
     @RequestMapping("/request-param-default")
