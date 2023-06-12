@@ -46,14 +46,14 @@ public class RequestBodyJsonController {
         return "OK";
     }
 
-    @ResponseBody
-    @PostMapping("/request-body-json-v3")
-    //RequestBody 생략하면 ModelAttribute가 적용된다.
-    // -> String, int, Integer같은 단순 타입은 @RequestParam, 나머지가 @ModelAttribute
-    public String requestBodyJsonV3(@RequestParam HelloData helloData) {
-        log.info("username={}, age={}", helloData.getUsername(), helloData.getAge());
-        return "OK";
-    }
+        @ResponseBody
+        @PostMapping("/request-body-json-v3")
+        //RequestBody 생략하면 ModelAttribute가 적용된다.
+        // -> String, int, Integer같은 단순 타입은 @RequestParam, 나머지가 @ModelAttribute
+        public String requestBodyJsonV3(@RequestBody HelloData helloData) {
+            log.info("username={}, age={}", helloData.getUsername(), helloData.getAge());
+            return "OK";
+        }
 
     @ResponseBody
     @PostMapping("/request-body-json-v4")
